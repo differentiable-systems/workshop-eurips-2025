@@ -11,7 +11,7 @@
     </marker> -->
 
     <style>
-      .rect { fill: #efefef; stroke: #aaa; stroke-width: 0.2; }
+      .rect { fill: #f8f8f8; stroke: #aaa; stroke-width: 0.2; }
       .dash { fill: none; stroke: #aaa; stroke-width: 0.4; stroke-dasharray: 0.6 0.4; stroke-linecap: butt; }
     </style>
   </defs>
