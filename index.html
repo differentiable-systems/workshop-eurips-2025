@@ -1,96 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Differentiable Systems and Scientific Machine Learning Workshop - EurIPS 2025</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-    html {
-      scroll-behavior: smooth;
-    }
+    /* Layout reset */
+    html { box-sizing: border-box; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    *, *::before, *::after { box-sizing: inherit; }
+
     body {
       margin: 0;
       font-family: "Ubuntu Mono", monospace;
-      font-optical-sizing: auto;
-      font-style: normal;
-      font-size: 13pt;
-      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.4;
       background: url('tile.svg') repeat;
       color: #000;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    @media (min-width: 600px) {
-      body {
-        font-size: 11pt;
-      }
+    
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
+      header { padding: 1rem; }
+      nav { margin-top: 1rem; }
+      section { margin: 1.5rem auto; padding: 1rem; }
     }
+
     header {
       background: #fff;
       padding: 2rem;
       text-align: center;
       border-bottom: 1px solid #ccc;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     header img {
-      max-height: 100px;
+      max-width: 90%;
+      height: auto;
+      max-height: 120px;
       display: block;
       margin: 0 auto 1rem;
     }
+
     nav {
       text-align: center;
       margin-top: 2rem;
       line-height: 1.5;
     }
     nav a {
-      margin: 0 1rem;
+      margin: 0 0.75rem;
       text-decoration: none;
       color: #111;
-      font-weight: bold;
-      text-wrap: nowrap;
+      font-weight: 700;
+      white-space: nowrap;
     }
+
     section {
-      max-width: 900px;
+      width: min(800px, 94vw);
+      max-width: 800px;
       margin: 4rem auto;
       padding: 2rem;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
       border: 1px solid #ccc;
     }
+
     h2 {
       border-bottom: 1px solid #ddd;
       padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      margin-top: 0.5rem;
+      margin-bottom: 1.25rem;
+      margin-top: 0.25rem;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 0.95rem;
     }
     table td, table th {
       border: 1px solid #ccc;
       padding: 0.5rem;
       text-align: left;
     }
+
     .people {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
-    .person {
-      text-align: center;
-    }
+    .person { text-align: center; }
+
+    /* responsive headshots */
     .person img {
-      width: 100px;
-      height: 100px;
+      width: clamp(72px, 12vw, 100px);
+      height: clamp(72px, 12vw, 100px);
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 0.5rem;
+      display: inline-block;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.9em;
+      font-size: 0.95rem;
+      color: #333;
     }
   </style>
 </head>
@@ -98,7 +115,10 @@
   <header>
     <img src="logo.svg" alt="Workshop Logo">
     <h1>Differentiable Systems and Scientific Machine Learning</h1>
-    <p>A workshop @ <a href="https://eurips.cc/" target="_blank">EurIPS 2025</a> · December 6 or 7, 2025 · <a href="https://maps.google.com/maps?ll=55.638011,12.578839&z=13&t=m&hl=en-US&gl=US&mapclient=embed&cid=7051282485936634008" target="_blank">Bella Center, Copenhagen</a></p>
+    <p>A workshop @ <a href="https://eurips.cc/" target="_blank">EurIPS 2025</a></p>
+    <p>December 6 or 7, 2025</p>
+    <p><a href="https://maps.google.com/maps?ll=55.638011,12.578839&z=13&t=m&hl=en-US&gl=US&mapclient=embed&cid=7051282485936634008" target="_blank">Bella Center, Copenhagen</a></p>
+    </p>
     <nav>
       <a href="#about">About</a>
       <a href="#schedule">Schedule</a>
@@ -111,32 +131,21 @@
   <section id="about">
     <h2>About</h2>
     <p>[Placeholder text about the workshop. Key aims, importance, and relevance to EurIPS.]</p>
-    <p><strong>Important dates:</strong> Submission deadline: [date] · Notification: [date] · Workshop: [date]</p>
+    <p><strong>Important dates:</strong> <ul>
+      <li>Submission deadline: [date]</li>
+      <li>Notification: [date]</li>
+      <li>Workshop: [date]</li>
+    </ul></p>
   </section>
 
   <section id="schedule">
     <h2>Tentative Schedule</h2>
     <table>
-      <tr>
-        <th>Time</th>
-        <th>Event</th>
-      </tr>
-      <tr>
-        <td>09:00 - 09:15</td>
-        <td>Opening remarks</td>
-      </tr>
-      <tr>
-        <td>09:15 - 10:00</td>
-        <td>Invited Talk 1</td>
-      </tr>
-      <tr>
-        <td>10:00 - 10:45</td>
-        <td>Invited Talk 2</td>
-      </tr>
-      <tr>
-        <td>... </td>
-        <td>[More items]</td>
-      </tr>
+      <tr><th>Time</th><th>Event</th></tr>
+      <tr><td>09:00 - 09:15</td><td>Opening remarks</td></tr>
+      <tr><td>09:15 - 10:00</td><td>Invited Talk 1</td></tr>
+      <tr><td>10:00 - 10:45</td><td>Invited Talk 2</td></tr>
+      <tr><td>... </td><td>[More items]</td></tr>
     </table>
   </section>
 
@@ -153,7 +162,6 @@
         <p><strong>Speaker 2</strong></p>
         <p>[Short bio placeholder]</p>
       </div>
-      <!-- Add more speakers -->
     </div>
   </section>
 
@@ -175,22 +183,6 @@
         <p><strong>Organizer 2</strong></p>
         <p>[Short bio placeholder]</p>
       </div>
-      <div class="person">
-        <img src="organizer3.jpg" alt="Organizer 1">
-        <p><strong>Organizer 3</strong></p>
-        <p>[Short bio placeholder]</p>
-      </div>
-      <div class="person">
-        <img src="organizer4.jpg" alt="Organizer 1">
-        <p><strong>Organizer 4</strong></p>
-        <p>[Short bio placeholder]</p>
-      </div>
-      <div class="person">
-        <img src="organizer5.jpg" alt="Organizer 1">
-        <p><strong>Organizer 5</strong></p>
-        <p>[Short bio placeholder]</p>
-      </div>
-      <!-- Add more organizers -->
     </div>
     <p><strong>Contact:</strong> <a href="mailto:differentiable-systems@googlegroups.com">differentiable-systems@googlegroups.com</a></p>
   </section>
