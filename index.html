@@ -14,10 +14,15 @@
       font-family: "Ubuntu Mono", monospace;
       font-optical-sizing: auto;
       font-style: normal;
-      font-size: 14px;
+      font-size: 13pt;
       font-weight: 400;
       background: url('tile.svg') repeat;
       color: #000;
+    }
+    @media (min-width: 600px) {
+      body {
+        font-size: 11pt;
+      }
     }
     header {
       background: #fff;
@@ -41,6 +46,7 @@
       text-decoration: none;
       color: #111;
       font-weight: bold;
+      text-wrap: nowrap;
     }
     section {
       max-width: 900px;
