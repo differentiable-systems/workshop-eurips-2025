@@ -137,6 +137,7 @@
       <a href="#schedule">Schedule</a>
       <a href="#speakers">Invited Speakers</a>
       <a href="#cfp">Call for Papers</a>
+      <a href="#references">Further Reading</a>
       <a href="#organizers">Organizers</a>
     </nav>
   </header>
@@ -144,25 +145,19 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      Automatic differentiation is a key technology for building advanced machine learning models that simulate complex phenomena. 
+      Automatic differentiation is a key technology for all machine learning models, including surrogate models that simulate complex phenomena. 
       But can we go beyond individual models?
-      How can we build entire differentiable <i>systems</i> that combine multiple components, such as simulators, mathematical solvers, surrogate models, 3D renderers, and more, to tackle real scientific challenges?
     </p>
     <p>
-      This workshop aims to answer these questions by bringing together experts from around the community. Concretely, we expect contributions that present advances in:
+      More precisely, <strong>can we build entire <i>differentiable systems</i> that combine multiple components like adjoint-based simulators, mathematical solvers, surrogate models, and 3D renderers to tackle real scientific challenges?</strong>
+    </p>
+    <p>
+      This workshop aims to answer this question by bringing together experts from around the community. We expect contributions that present advances in:
       <ul>
-        <li>Novel differentiable components for scientific machine learning (SciML).</li>
+        <li>Novel approaches to scientific machine learning (SciML).</li>
         <li>Design and implementation of end-to-end differentiable systems.</li>
-        <li>Challenges and solutions for propagating gradients and performing optimization through complex systems.</li>
-        <li>Case studies demonstrating the application of differentiable systems specifically and SciML broadly to real-world scientific problems.</li>
-      </ul>
-    </p>
-    <p>
-      This workshop brings together experts from around the community to:
-      <ul>
-        <li>Assess relevance of system-level differentiability to the SciML practitioners</li>
-        <li>Inform future directions of end-to-end differentiable systems with real-world impact</li>
-        <li>Formulate a near-term research and engineering agenda to establish differentiable systems as an effective tool for the community</li>
+        <li>Challenges and solutions for propagating gradients and performing optimization through complex operations.</li>
+        <li>Case studies demonstrating the application of differentiable systems specifically, or SciML broadly, to real-world scientific problems.</li>
       </ul>
     </p>
     <h3>Important dates</h3> 
@@ -175,7 +170,9 @@
 
   <section id="schedule">
     <h2>Tentative Schedule</h2>
-    <i>All times below are GMT+2.</i>
+    <p>
+      <i>All times below are GMT+2.</i>
+    </p>
     <table>
       <tr><th>Time</th><th>Event</th></tr>
       <tr><td>09:00 - 09:15</td><td>Opening remarks</td></tr>
@@ -223,29 +220,27 @@
   <section id="cfp">
     <h2>Call for Papers</h2>
     <p>
-      We invite submissions in a form of short papers, including those describing work in progress, on the following topics:
+      We invite previously unpublished submissions in a form of short papers, including those describing work in progress, as long as they represent advances within the following topics:
       <ul>
-        <li>Differentiable models for scientific ML</li>
-        <li>Multi-scale and multi-physics differentiable modeling</li>
-        <li>Theory and practice of automatic differentiation</li>
-        <li>Challenges of moving from differentiable models to end-to-end differentiable systems</li>
-        <li>Design and implementation of differentiable systems</li>
-        <li>Gradient tracing across distributed computing environments</li>
-        <li>Novel ways to arrive at differentiable (SciML) components</li>
-        <li>Concrete prototypes of differentiable systems</li>
-        <li>Theoretical insight into properties of differentiable systems</li>
-        <li>Integration of differentiable components with experimental workflows</li>
-        <li>Differentiable approaches to inverse problems and parameter estimation</li>
-        <li>Case studies across scientific domains: climate, physics, engineering design</li>
-        <li>Alternative methods of performing optimization (such as Bayesian optimization)</li>
+        <li>Challenges and opportunities in end-to-end differentiable systems.</li>
+        <li>Benchmarks involving SciML or differentiable systems.</li>
+        <li>Differentiable versions of traditionally non-differentiable operations / software.</li>
+        <li>Theory and practice of automatic differentiation.</li>
+        <li>Theoretical insight into properties of differentiable systems.</li>
+        <li>Differentiable programming in heterogeneous / distributed computing environments.</li>
+        <li>Surrogate models for scientific applications.</li>
+        <li>Hybrid models combining mechanistic and data-driven components.</li>
+        <li>Gradient-based approaches to optimization, e.g. for inverse problems and parameter estimation.</li>
+        <li>Alternative methods of performing optimization (such as Bayesian optimization).</li>
+        <li>Case studies applying SciML / differentiable systems to a scientific domain (e.g., weather / climate, physics, engineering design).</li>
       </ul>
     </p>
     <h3>Submission Guidelines</h3>
     <ul>
-      <li>Length: up to 4 pages plus unlimited references</li>
-      <li>Format: <a href="https://neurips.cc/Conferences/2025/CallForPapers" target="_blank">NeurIPS 2025 template</a></li>
-      <li>Reviews: double-blind, please anonymise your submission</li>
-      <li>Proceedings: no format proceedings, accepted papers will be shared on the website</li>
+      <li><strong>Length:</strong> up to 4 pages plus unlimited references</li>
+      <li><strong>Format:</strong> <a href="https://neurips.cc/Conferences/2025/CallForPapers" target="_blank">NeurIPS 2025 template</a></li>
+      <li><strong>Reviews:</strong> double-blind, please anonymize your submission</li>
+      <li><strong>Proceedings:</strong> no formal proceedings, accepted papers will be shared on the website</li>
     </ul>
     <p>
       <strong>Submission website:</strong> <i>coming soon!</i>
@@ -254,10 +249,13 @@
 
   <section id="references">
     <h2>Further Reading</h2>
-    Wondering what differentiable systems and scientific machine learning are about? Here are some pointers to get you started:
+    Want to learn more about differentiable systems and scientific machine learning? Here are some pointers to get you started:
     <ol>
       <li><a href="https://physicsbaseddeeplearning.org/intro.html">Physics-Based Deep Learning</a></li>
-
+      <li><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-fluid-010719-060214">Machine Learning for Fluid Mechanics</a></li>
+      <li><a href="https://sciml.ai/">SciML: Open Source Software for Scientific Machine Learning</a></li>
+      <li><a href="https://joss.theoj.org/papers/10.21105/joss.08385">Tesseract Core: Universal, autodiff-native software components for Simulation Intelligence</a></li>
+      <li><a href="https://www.jmlr.org/papers/volume18/17-468/17-468.pdf">Automatic Differentiation in Machine Learning: a Survey</a></li>
     </ol>
   </section>
 
@@ -266,27 +264,27 @@
     <div class="people">
       <div class="person">
         <img class="headshot" src="headshots/andrei.jpg" alt="Andrei Paleyes">
-        <p><strong>Andrei Paleyes</strong></p>
+        <p><strong><a href="https://paleyes.info/">Andrei Paleyes</a></strong></p>
         <p><img class="affiliation" src="headshots/pasteur.jpeg">Pasteur Labs</p>
       </div>
       <div class="person">
         <img class="headshot" src="headshots/dion.jpeg" alt="Dion Häfner">
-        <p><strong>Dion Häfner</strong></p>
+        <p><strong><a href="https://dionhaefner.github.io/">Dion Häfner</a></strong></p>
         <p><img class="affiliation" src="headshots/pasteur.jpeg">Pasteur Labs</p>
       </div>
       <div class="person">
         <img class="headshot" src="headshots/sam.jpg" alt="Sam Alipio">
-        <p><strong>Sam Alipio</strong></p>
+        <p><strong><a href="https://www.linkedin.com/in/sgalipio/">Sam Alipio</a></strong></p>
         <p><img class="affiliation" src="headshots/pasteur.jpeg">Pasteur Labs</p>
       </div>
       <div class="person">
         <img class="headshot" src="headshots/felix.jpeg" alt="Felix Köhler">
-        <p><strong>Felix Köhler</strong></p>
+        <p><strong><a href="https://fkoehler.site/">Felix Köhler</a></strong></p>
         <p><img class="affiliation" src="headshots/tum.png">Technical University Munich</p>
       </div>
       <div class="person">
         <img class="headshot" src="headshots/jan-willem.jpg" alt="Jan-Willem van de Meent">
-        <p><strong>Jan-Willem van de Meent</strong></p>
+        <p><strong><a href="hhttps://jwvdm.github.io/">Jan-Willem van de Meent</a></strong></p>
         <p><img class="affiliation" src="headshots/uva.jpg">University of Amsterdam</p>
       </div>
     </div>
