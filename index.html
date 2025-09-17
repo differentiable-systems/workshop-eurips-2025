@@ -17,16 +17,10 @@
       font-size: 16px;
       line-height: 1.4;
       background: url('tile.svg') repeat;
+      background-attachment: fixed;
       color: #000;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-    }
-    
-    /* Mobile tweaks */
-    @media (max-width: 768px) {
-      header { padding: 1rem; }
-      nav { margin-top: 1rem; }
-      section { margin: 1.5rem auto; padding: 1rem; }
     }
 
     header {
@@ -58,7 +52,6 @@
     }
 
     section {
-      width: min(800px, 94vw);
       max-width: 800px;
       margin: 4rem auto;
       padding: 2rem;
@@ -109,6 +102,13 @@
       font-size: 0.95rem;
       color: #333;
     }
+
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
+      header { padding: 1rem; }
+      nav { margin-top: 1rem; }
+      section { margin: 3.0rem auto; padding: 1.0rem; border-radius: 0px; }
+    }
   </style>
 </head>
 <body>
@@ -140,11 +140,12 @@
         <li>Formulate a near-term research and engineering agenda to establish differentiable systems as an effective tool for the community</li>
       </ul>
     </p>
-    <p><strong>Important dates:</strong> <ul>
-      <li>Submission deadline: 10 October 2025</li>
-      <li>Notification: 31 October 2025</li>
-      <li>Workshop: 6 or 7 December 2025</li>
-    </ul></p>
+    <h3>Important dates</h3> 
+    <ul>
+      <li><strong>Submission deadline:</strong> 10 October 2025</li>
+      <li><strong>Notification:</strong> 31 October 2025</li>
+      <li><strong>Workshop:</strong> 6 or 7 December 2025</li>
+    </ul>
   </section>
 
   <section id="schedule">
