@@ -81,18 +81,19 @@
 
     .people {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.25rem;
+      margin-top: 1.5rem;
     }
     .person { text-align: center; }
 
     /* responsive headshots */
-    .person img {
+    .person img.headshot {
       width: clamp(72px, 12vw, 100px);
       height: clamp(72px, 12vw, 100px);
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       display: inline-block;
     }
 
@@ -101,6 +102,17 @@
       padding: 2rem;
       font-size: 0.95rem;
       color: #333;
+    }
+
+    .person img.affiliation {
+      height: 1.2em;
+      vertical-align: middle;
+      margin-right: 0.4em;
+    }
+
+    tr.break td {
+      color: #333;
+      background: #f1f1f1;
     }
 
     /* Mobile tweaks */
@@ -155,7 +167,15 @@
       <tr><td>09:00 - 09:15</td><td>Opening remarks</td></tr>
       <tr><td>09:15 - 10:00</td><td>Invited Talk 1</td></tr>
       <tr><td>10:00 - 10:45</td><td>Invited Talk 2</td></tr>
-      <tr><td>... </td><td>[More items]</td></tr>
+      <tr class="break"><td>10:45 - 11:00</td><td>Coffee Break</td></tr>
+      <tr><td>11:00 - 12:00</td><td>Contributed Talks (selected from submissions)</td></tr>
+      <tr><td>12:00 - 13:00</td><td>Panel Discussion</td></tr>
+      <tr class="break"><td>13:00 - 14:00</td><td>Lunch Break</td></tr>
+      <tr><td>14:00 - 14:45</td><td>Invited Talk 3</td></tr>
+      <tr><td>14:45 - 15:30</td><td>Invited Talk 4</td></tr>
+      <tr class="break"><td>15:30 - 15:45</td><td>Coffee Break</td></tr>
+      <tr><td>15:45 - 16:45</td><td>Contributed Talks (selected from submissions)</td></tr>
+      <tr><td>16:45 - 18:00</td><td>Poster Session</td></tr>
     </table>
   </section>
 
@@ -163,16 +183,27 @@
     <h2>Invited Speakers</h2>
     <div class="people">
       <div class="person">
-        <img src="speaker1.jpg" alt="Speaker 1">
-        <p><strong>Speaker 1</strong></p>
-        <p>[Short bio placeholder]</p>
+        <img class="headshot" src="headshots/petros.png" alt="Petros Koumoutsakos">
+        <p><strong><a href="https://cse-lab.seas.harvard.edu/" target="_blank">Petros Koumoutsakos</a></strong></p>
+        <p>Professor of Computing in Science and Engineering, Harvard University, and leading expert in AI for science.</p>
       </div>
       <div class="person">
-        <img src="speaker2.jpg" alt="Speaker 2">
-        <p><strong>Speaker 2</strong></p>
-        <p>[Short bio placeholder]</p>
+        <img class="headshot" src="headshots/patrick.png" alt="Patrick Kidger">
+        <p><strong><a href="https://kidger.site" target="_blank">Patrick Kidger</a></strong></p>
+        <p>Core maintainer of the JAX <a href="https://github.com/patrick-kidger">scientific software ecosystem</a> and technical lead at Cradle Bio.</p>
       </div>
     </div>
+    <div class="people">
+      <div class="person">
+        <img class="headshot" src="headshots/nils.jpg" alt="Nils Thuerey">
+        <p><strong><a href="https://ge.in.tum.de/about/n-thuerey/" target="_blank">Nils Thuerey</a></strong></p>
+        <p>Professor of Computer Science at the Technical University of Munich, working on physics-based simulation and machine learning, and pioneer in differentiable physics research.</p>
+      </div>
+      <div class="person">
+        <img class="headshot" src="headshots/astrid.png" alt="Astrid Walle">
+        <p><strong><a href="https://www.cfdsolutions.net/about-me" target="_blank">Astrid Walle</a></strong></p>
+        <p>Astrid Walle CFDSolutions, expert in ML + data science for real-world simulation problems.</p>
+      </div>
   </section>
 
   <section id="cfp">
@@ -195,30 +226,54 @@
         <li>Alternative methods of performing optimization (such as Bayesian optimization)</li>
       </ul>
     </p>
+    <h3>Submission Guidelines</h3>
+    <ul>
+      <li>Length: up to 4 pages plus unlimited references</li>
+      <li>Format: <a href="https://neurips.cc/Conferences/2025/CallForPapers" target="_blank">NeurIPS 2025 template</a></li>
+      <li>Reviews: double-blind, please anonymise your submission</li>
+      <li>Proceedings: no format proceedings, accepted papers will be shared on the website</li>
+    </ul>
     <p>
-      <strong>Submission Guidelines</strong>
-      <ul>
-        <li>Length: up to 4 pages plus unlimited references</li>
-        <li>Format: <a href="https://neurips.cc/Conferences/2025/CallForPapers" target="_blank">NeurIPS 2025 template</a></li>
-        <li>Reviews: double-blind, please anonymise your submission</li>
-        <li>Proceedings: no format proceedings, accepted papers will be shared on the website</li>
-      </ul>
       <strong>Submission website:</strong> <i>coming soon!</i>
     </p>
+  </section>
+
+  <section id="references">
+    <h2>Further Reading</h2>
+    Wondering what differentiable systems and scientific machine learning are about? Here are some pointers to get you started:
+    <ol>
+      <li><a href="https://physicsbaseddeeplearning.org/intro.html">Physics-Based Deep Learning</a></li>
+
+    </ol>
   </section>
 
   <section id="organizers">
     <h2>Organizers</h2>
     <div class="people">
       <div class="person">
-        <img src="organizer1.jpg" alt="Organizer 1">
-        <p><strong>Organizer 1</strong></p>
-        <p>[Short bio placeholder]</p>
+        <img class="headshot" src="headshots/andrei.jpeg" alt="Andrei Paleyes">
+        <p><strong>Andrei Paleyes</strong></p>
+        <p><img class="affiliation" src="headshots/pasteur.jpeg">Pasteur Labs</p>
       </div>
       <div class="person">
-        <img src="dion.jpeg" alt="Organizer 2">
-        <p><strong>Organizer 2</strong></p>
-        <p>[Short bio placeholder]</p>
+        <img class="headshot" src="headshots/dion.jpeg" alt="Dion Häfner">
+        <p><strong>Dion Häfner</strong></p>
+        <p><img class="affiliation" src="headshots/pasteur.jpeg">Pasteur Labs</p>
+      </div>
+      <div class="person">
+        <img class="headshot" src="headshots/sam.jpg" alt="Sam Alipio">
+        <p><strong>Sam Alipio</strong></p>
+        <p><img class="affiliation" src="headshots/pasteur.jpeg">Pasteur Labs</p>
+      </div>
+      <div class="person">
+        <img class="headshot" src="headshots/felix.jpeg" alt="Felix Köhler">
+        <p><strong>Felix Köhler</strong></p>
+        <p><img class="affiliation" src="headshots/tum.png">Technical University Munich</p>
+      </div>
+      <div class="person">
+        <img class="headshot" src="headshots/jan-willem.jpg" alt="Jan-Willem van de Meent">
+        <p><strong>Jan-Willem van de Meent</strong></p>
+        <p><img class="affiliation" src="headshots/uva.jpg">University of Amsterdam</p>
       </div>
     </div>
     <p><strong>Contact:</strong> <a href="mailto:differentiable-systems@googlegroups.com">differentiable-systems@googlegroups.com</a></p>
