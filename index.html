@@ -80,6 +80,35 @@
       text-align: left;
     }
 
+    .paper-list {
+      font-size: 0.95rem;
+    }
+
+    .paper-list li {
+      clear: both;
+      margin-bottom: 0.5rem;
+    }
+
+    .paper-authors {
+      margin-left: 0.5rem;
+    }
+
+    .paper-authors::before {
+      content: "by "
+    }
+
+    .paper-title {
+      font-weight: 600;
+    }
+
+    .paper-links {
+       float: right;
+    }
+
+    .bio {
+      font-size: 0.9rem;
+    }
+
     .people {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -88,13 +117,15 @@
     }
     .person { text-align: center; }
 
+    .person p { margin: 8px 0; }
+
     /* responsive headshots */
     .person img.headshot {
       width: clamp(72px, 12vw, 100px);
       height: clamp(72px, 12vw, 100px);
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.2rem;
       display: inline-block;
     }
 
@@ -116,6 +147,10 @@
       background: #f1f1f1;
     }
 
+    .small {
+      font-size: 0.8rem;
+    }
+
     /* Mobile tweaks */
     @media (max-width: 768px) {
       header { padding: 1rem; }
@@ -129,12 +164,13 @@
     <img src="logo.svg" alt="Workshop Logo">
     <h1>Differentiable Systems and Scientific Machine Learning</h1>
     <p>A workshop @ <a href="https://eurips.cc/" target="_blank">EurIPS 2025</a></p>
-    <p>December 6 or 7, 2025</p>
-    <p><a href="https://maps.google.com/maps?ll=55.638011,12.578839&z=13&t=m&hl=en-US&gl=US&mapclient=embed&cid=7051282485936634008" target="_blank">Bella Center, Copenhagen</a></p>
+    <p>December 6, 2025</p>
+    <p>Location tba <span class="small">(somewhere on Amager, Copenhagen)</span></p>
     </p>
     <nav>
       <a href="#about">About</a>
       <a href="#schedule">Schedule</a>
+      <a href="#papers">Accepted Papers</a>
       <a href="#speakers">Invited Speakers</a>
       <a href="#cfp">Call for Papers</a>
       <a href="#references">Further Reading</a>
@@ -170,25 +206,126 @@
   </section>
 
   <section id="schedule">
-    <h2>Tentative Schedule</h2>
-    <p>
-      <i>All times below are GMT+2.</i>
+    <h2>Schedule</h2>
+    <p class="small">
+      <i>All times below are local to the workshop (GMT+2).</i>
     </p>
     <table>
       <tr><th>Time</th><th>Event</th></tr>
-      <tr><td>09:00 - 09:15</td><td>Opening remarks</td></tr>
-      <tr><td>09:15 - 10:00</td><td>Invited Talk 1</td></tr>
-      <tr><td>10:00 - 10:45</td><td>Invited Talk 2</td></tr>
-      <tr class="break"><td>10:45 - 11:00</td><td>Coffee Break</td></tr>
-      <tr><td>11:00 - 12:00</td><td>Contributed Talks (selected from submissions)</td></tr>
-      <tr><td>12:00 - 13:00</td><td>Panel Discussion</td></tr>
-      <tr class="break"><td>13:00 - 14:00</td><td>Lunch Break</td></tr>
-      <tr><td>14:00 - 14:45</td><td>Invited Talk 3</td></tr>
-      <tr><td>14:45 - 15:30</td><td>Invited Talk 4</td></tr>
-      <tr class="break"><td>15:30 - 15:45</td><td>Coffee Break</td></tr>
-      <tr><td>15:45 - 16:45</td><td>Contributed Talks (selected from submissions)</td></tr>
-      <tr><td>16:45 - 18:00</td><td>Poster Session</td></tr>
+      <tr class="break"><td>08:30 - 08:45</td><td>Authors put up posters</td></tr>
+      <tr>
+        <td>08:45 - 09:00</td>
+        <td><strong>Opening remarks</strong></td>
+      </tr>
+      <tr><td>09:00 - 09:45</td><td><strong>Invited Talk</strong><br>Petros Koumoutsakos &mdash; <i>Simulation and Control of forward and inverse problems using the Optimisation of a Discrete Loss (ODIL)</i></td></tr>
+      <tr><td>09:45 - 10:30</td><td><strong>Invited Talk</strong><br>Johanna Haffner &mdash; <i>An introduction to the Equinox ecosystem: differentiable optimization + scientific computing in JAX</i></td></tr>
+      <tr class="break"><td>10:30 - 11:00</td><td>Coffee Break</td></tr>
+      <tr>
+        <td>11:00 - 12:30</td>
+        <td>
+          <strong>Contributed Talks</strong> (selected from submissions, 10+2 min each)
+          <ol>
+            <li>scipy.spatial.transform: Differentiable Framework-Agnostic 3D Transformations in Python</li>
+            <li>Train Forwards, Optimize Backwards: Neural Surrogates for Personalized Medical Simulations </li>
+            <li>DiffWake: A General Differentiable Wind-Farm Solver in JAX</li>
+            <li>Surrogate-Based Differentiable Pipeline for Shape Optimization</li>
+            <li>Carbox: an end-to-end differentiable astrochemical simulation framework</li>
+            <li>Douglas-Rachford Splitting for Hybrid Differentiable Models</li>
+          </ol>
+
+        </td></tr>
+      <tr class="break"><td>12:30 - 13:30</td><td>Lunch Break</td></tr>
+      <tr><td>13:30 - 14:15</td><td><strong>Invited Talk</strong><br>Sai Bangaru &mdash; <i>Developing Performance-Critical Differentiable Software With Slang</i></td></tr>
+      <tr>
+        <td>14:15 - 15:00</td>
+        <td>
+          <strong>Invited Talk</strong><br>Astrid Walle &mdash; <i>Learning from CAD</i>
+        </td>
+      </tr>
+      <tr class="break"><td>15:00 - 15:30</td><td>Coffee Break</td></tr>
+      <tr>
+        <td>15:30 - 16:15</td>
+        <td>
+            <strong>Panel Discussion</strong><br>System approaches in SciML &mdash; key to real-world impact or intractable complexity?
+            <p class="small">
+              Panelists: Astrid Walle, Dirk Hartmann, Johanna Haffner, Petros Koumoutsakos, Sai Bangaru
+            </p>
+        </td>
+      </tr>
+      <tr><td>16:15 - 17:00</td><td><strong>Poster Session</strong></td></tr>
     </table> 
+
+    <h3>🚨 Post-workshop event: Differentiable systems with Tesseract 🚨</h3>
+    <p>Join some of the organizers (and hopefully many of the attendees) for pizza, beer, and a hands-on tutorial on how to use <a href="https://github.com/pasteurlabs/tesseract-core" target="_blank">Tesseract</a> to build end-to-end differentiable systems.</p>
+    <p>Time and place to be announced, please check back later.</p>
+  </section>
+
+  <section id="papers">
+    <h2>Accepted Papers</h2>
+    <ol class="paper-list">
+      <!-- Start auto-generated list of papers -->
+     <li><span class="paper-title">LOCO: Abstracting Spectral Numerical Integrators for PDEs into Neural Operators</span><span class="paper-authors">Lenz Pracher, Takashi Matsubara</span> <span class="paper-links"></span></li>
+     <li><span class="paper-title">Acoustic field estimation with differentiable physics</span><span class="paper-authors">Samuel Arturo Verburg Riezu, Efren Fernandez Grande, Peter Gerstoft</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=Dr4lgp52NT" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=Dr4lgp52NT&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics</span><span class="paper-authors">Tai Hoang, Alessandro Trenta, Alessio Gravina, Niklas Freymuth, Philipp Becker, Davide Bacciu, Gerhard Neumann</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=fEKQAwFHqe" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=fEKQAwFHqe&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Differentiable N-body code for Galactic Dynamics - Odisseo</span><span class="paper-authors">Giuseppe Viterbo, Tobias Buck</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=CLvRgupDcG" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=CLvRgupDcG&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Ray-trax: Fast, Time-Dependent and Differentiable Ray Tracing for On-the-Fly Radiative Transfer in Turbulent Astrophysical Flows</span><span class="paper-authors">Lorenzo Branca, Rune Rost, Tobias Buck</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=sbn5XhQqqG" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=sbn5XhQqqG&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Emulating Radiative Transfer in Astrophysical Environments</span><span class="paper-authors">Rune Rost, Lorenzo Branca, Tobias Buck</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=LM2f7usPWM" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=LM2f7usPWM&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Accelerating Automatic Differentiation of Direct Form Digital Filters</span><span class="paper-authors">Chin-Yun Yu, George Fazekas</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=ZhwIyvtBNB" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=ZhwIyvtBNB&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Graph Neural Regularizers for PDE Inverse Problems</span><span class="paper-authors">William Lauga, James Rowbottom, Alexander Denker, Zeljko Kereta, Moshe Eliasof, Carola-Bibiane Schönlieb</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=bbT1HFzFFC" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=bbT1HFzFFC&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">An Empirical Study of Lagrangian Methods in Safe Reinforcement Learning</span><span class="paper-authors">Lindsay Spoor, Alvaro Serra-Gomez, Aske Plaat, Thomas M. Moerland</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=gWNOq2Pe5W" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=gWNOq2Pe5W&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Dynamic guessing for Hamiltonian Monte Carlo with embedded numerical root-finding</span><span class="paper-authors">Teddy Groves, Nicholas Luke Cowie, Lars Keld Nielsen</span> <span class="paper-links"></span></li>
+     <li><span class="paper-title">Are gradients worth the effort? Comparing automatic differentiation and simulation-based inference for agent-based models</span><span class="paper-authors">Timothy James Hitge, Arnau Quera-Bofarull, Elizaveta Semenova</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=NVvUkYNYPK" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=NVvUkYNYPK&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Data-Guided Discovery of Ocean Dynamics</span><span class="paper-authors">Qi-fan Wu, Dion Häfner, Roman Nuterman, Guido Vettoretti, Markus Jochum</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=3ZQUDXEeQo" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=3ZQUDXEeQo&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">When Less is More: Approximating the Quantum Geometric Tensor with Block Structures</span><span class="paper-authors">Ahmedeo Shokry, Alessandro Santini, Filippo Vicentini</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=KOxyy2JGbR" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=KOxyy2JGbR&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">First-order Sobolev Reinforcement Learning</span><span class="paper-authors">Fabian Schramm, Nicolas Perrin-Gilbert, Justin Carpentier</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=WTWteUqQ5m" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=WTWteUqQ5m&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Improving GNN-Based Multiple Scattering Simulation with Rewiring</span><span class="paper-authors">Rémi Marsal, Stéphanie Chaillat</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=kex0P2KMsZ" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=kex0P2KMsZ&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Measure-Valued Automatic Differentiation for Hybrid and Non-Smooth Systems</span><span class="paper-authors">Muhammad Haris Khan</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=9D5TnNGIxa" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=9D5TnNGIxa&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Enhancing scientific Bayesian optimization via physics-informed operator priors</span><span class="paper-authors">Sean Hooten, Wolfger Peelaers, Thomas Van Vaerenbergh, Marco Fiorentino</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=izGJFVHZMG" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=izGJFVHZMG&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">scipy.spatial.transform: Differentiable Framework-Agnostic 3D Transformations in Python</span><span class="paper-authors">Martin Schuck, Alexander von Rohr, Angela P. Schoellig</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=eaN5y07hbw" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=eaN5y07hbw&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Differentiable Astrophysics</span><span class="paper-authors">Philip Mocz</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=K90sIpjRuQ" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=K90sIpjRuQ&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Differentiable Simulations for Joint Parameterised Optimisation of Antenna Arrays</span><span class="paper-authors">Niels Skovgaard Jensen, Frederik Faye, Lasse Hjuler Christiansen, Allan Peter Engsig-Karup</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=bjyUK5NX0a" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=bjyUK5NX0a&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Uncertainty-aware Physics-informed Neural Networks for Robust CARS-to-Raman Signal Reconstruction</span><span class="paper-authors">Aishwarya Venkataramanan, Sai Karthikeya Vemuri, Adithya Ashok Chalain Valapil, Joachim Denzler</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=hYBK6optYS" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=hYBK6optYS&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">RUBIX: Differentiable forward modelling of galaxy spectral data cubes for gradient-based parameter estimation</span><span class="paper-authors">Anna Lena Schaible, Ufuk Çakır, Harald Mack, Aura Obreja, William H. Oliver, Nihat Oguz, Horea Cărămizaru, Tobias Buck</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=wbZgEY4LJC" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=wbZgEY4LJC&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Solver-in-the-Loop Applications in Astrophysical (Magneto)hydrodynamics</span><span class="paper-authors">Leonard Storcks, Tobias Buck</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=V5nArGQvEe" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=V5nArGQvEe&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Modeling COVID-19 Dynamics in German States Using Physics-Informed Neural Networks</span><span class="paper-authors">Phillip Rothenbeck, Sai Karthikeya Vemuri, Niklas Penzel, Joachim Denzler</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=kGrl6b6xEm" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=kGrl6b6xEm&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Temporal stability in reduced order model prediction of sea states: A surrogate model case study</span><span class="paper-authors">Freja Petersen</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=onjNdNKW2K" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=onjNdNKW2K&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Leveraging a Fully Differentiable Integrated Assessment Model for RL and Inference</span><span class="paper-authors">Koen Ponse, Kai-Hendrik Cohrs, Phillip Wozny, Andrew Robert Williams, Tianyu Zhang, Erman Acar, Yoshua Bengio, Aske Plaat, Thomas M. Moerland, Pierre Gentine, Gustau Camps-Valls</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=s5rJFjAd65" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=s5rJFjAd65&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Hybrid solver with local correction using Lagrangian latent memory</span><span class="paper-authors">Gwendal Jouan, Matthias Schulz, Daniel Berger, Stefan Gavranovic, Dirk Hartmann</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=Rta5pW1XA0" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=Rta5pW1XA0&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Real-time optimal control with shallow recurrent decoder networks</span><span class="paper-authors">Matteo Tomasetto, Andrea Manzoni, J. Nathan Kutz</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=C3l0Vf2RDi" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=C3l0Vf2RDi&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">A Validated LBM Dataset and Pipeline for Surrogate Modeling of Turbulent 3D Obstructed Channel Flows</span><span class="paper-authors">Lukas Schröder, Shubham Kavane, Harald Koestler</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=rdmHT72NQH" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=rdmHT72NQH&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Predicting Eigenmode Decompositions in Vibroacoustic Systems</span><span class="paper-authors">Christian Libner, Jan van Delden, Julius Schultz, Alexander S. Ecker, Timo Lüddecke</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=8KwIJIrHBt" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=8KwIJIrHBt&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">GPGreen: Learning Linear Operators with Gaussian Processes</span><span class="paper-authors">Thomas Cowperthwaite, Henry Moss</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=eNFMYj2ZG6" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=eNFMYj2ZG6&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Enhancing data assimilation and uncertainty quantification: machine learning for better covariance estimation</span><span class="paper-authors">Vinicius Luiz Santos Silva, Gabriel Serrao Seabra, Alexandre Anoze Emerick</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=T8UNpvopU9" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=T8UNpvopU9&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Hybrid Learning of Transport Equations with Differentiable Neural Solvers from Experimental Data</span><span class="paper-authors">Arthur Jessop, Mohammed Alsubeihi, Ashwin Kumar Rajagopalan, Ben Moseley</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=jp5wlTrWnT" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=jp5wlTrWnT&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Towards fully differentiable neural ocean model with Veros</span><span class="paper-authors">Etienne Meunier, Said Ouala, Hugo Frezat, Julien Le Sommer, Ronan Fablet</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=DO7BoGKc9p" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=DO7BoGKc9p&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Learning Soil Water Retention Components through an End-to-End Differentiable Hybrid Model</span><span class="paper-authors">Sarem Norouzi, Per Moldrup, Ben Moseley, David Robinson, Dani Or, Budiman Minasny, Morteza Sadeghi, Tobias L. Hohenbrink, Emmanuel Arthur, Mogens H. Greve, Lis W. de Jonge</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=v19FRVKl02" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=v19FRVKl02&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Differentiable Top-k: From One-Hot to k-Hot</span><span class="paper-authors">Klas Wijk, Ricardo Vinuesa, Hossein Azizpour</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=HxLmtJYfBi" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=HxLmtJYfBi&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Discovering and modelling dynamics on latent manifolds with neural geodesic flows</span><span class="paper-authors">Julian Bürge, Lewis O'Donnell, Ben Moseley</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=I3VyHmamHB" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=I3VyHmamHB&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Train Forwards, Optimize Backwards: Neural Surrogates for Personalized Medical Simulations</span><span class="paper-authors">Jonas Weidner, Ivan Ezhov, Michal Balcerak, Bjoern Menze, Daniel Rueckert, Benedikt Wiestler</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=ziXUDm6rSR" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=ziXUDm6rSR&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Implicit function theorem in Physics-Informed Neural Networks to solve parameterized differential equations</span><span class="paper-authors">Julien Marie-Anne, Cyriaque Rousselot, Nilo Schwencke, Alena Shilova</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=KjyGLUleWh" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=KjyGLUleWh&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Certifying Physics-Informed Neural Networks through Lower Error Bounds</span><span class="paper-authors">Arzu Ahmadova, Ismail Huseynov, Agamirza Bashirov</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=0i4b77lBIA" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=0i4b77lBIA&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Differentiation Strategies for Acoustic Inverse Problems: Admittance Estimation and Shape Optimization</span><span class="paper-authors">Nikolas Borrel-Jensen, Josiah Bjorgaard</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=I32CFsXZ8S" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=I32CFsXZ8S&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Bridging Continuous and Discrete Physics: A Hybrid PINN Framework with Differentiable Solvers</span><span class="paper-authors">Guillermo Ricardo Moreno Carrillo</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=uIFgXZEq2I" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=uIFgXZEq2I&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Case study of a differentiable heterogeneous multiphysics solver for a nuclear fusion application</span><span class="paper-authors">Jack Coughlin, Jonathan Brodrick, Archis Joglekar, Alexander Lavin</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=jmESUAggK5" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=jmESUAggK5&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">A Comparative Empirical Study of Relative Embedding Alignment in Neural Dynamical System Forecasters</span><span class="paper-authors">Deniz Kucukahmetler, Maximilian Jean Hemmann, Julian Mosig von Aehrenfeld, Maximilian Amthor, Christian Deubel, Nico Scherf, Diaaeldin Taha</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=MxwPAK9SQ3" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=MxwPAK9SQ3&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">DiffWake: A General Differentiable Wind Farm Solver in JAX</span><span class="paper-authors">Maria Bånkestad, Leon René Sütfeld, Aleksis Pirinen, Hamidreza Abedi</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=PNvRJuxzmi" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=PNvRJuxzmi&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Autoregressive PINNs for Time-Dependent PDEs</span><span class="paper-authors">Mayank Nagda, Jephte Abijuru, Phil Ostheimer, Jan C. Aurich, Stephan Mandt, Marius Kloft, Sophie Fellenz</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=1iOZVPmudk" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=1iOZVPmudk&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Data and Modeling Assumptions in Physics-Informed Operator Learning</span><span class="paper-authors">Martin Hofmann-Wellenhof, Alexander Fuchs, Bernhard C Geiger, Franz Pernkopf</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=C5sL9W8kwY" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=C5sL9W8kwY&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Amortized Physics-Informed Learning via Generative Initialization of Radial Basis Functions</span><span class="paper-authors">Edgar Torres, Mathias Niepert</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=sQihGspiUB" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=sQihGspiUB&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Surrogate-Based Differentiable Pipeline for Shape Optimization</span><span class="paper-authors">Andrin Rehmann, Nolan Black, Josiah Bjorgaard, Alessandro Angioi, Andrei Paleyes, Niklas Heim, Dion Häfner, Alexander Lavin</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=TZ3VkOQINw" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=TZ3VkOQINw&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Hybridized Data Driven Flux-Conservative Solvers: Towards Foundation Models for PDE-Solving</span><span class="paper-authors">Dirk Hartmann</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=mM20a2eKxN" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=mM20a2eKxN&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">A differentiable model of supply-chain shocks</span><span class="paper-authors">Sebastian Rene Towers, José Moran, Saad Hamid, Luca Mungo, Arnau Quera-Bofarull</span> <span class="paper-links"></span></li>
+     <li><span class="paper-title">Carbox: an end-to-end differentiable astrochemical simulation framework</span><span class="paper-authors">Gijs Vermariën, Tommaso Grassi, Marie Van de Sande, Serena Viti, Stefano Bovino, Alessandro Lupi, Alexander Ruf, Lorenzo Branca, Catherine Walsh</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=u8wnbkJ8WX" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=u8wnbkJ8WX&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Physics-Informed Residual Flows</span><span class="paper-authors">Jephte Abijuru, Mayank Nagda, Phil Ostheimer, Jan C. Aurich, Sebastian Josef Vollmer, Marius Kloft, Sophie Fellenz</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=OiIoXAUGHZ" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=OiIoXAUGHZ&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Spherical Fourier Neural Operators for Cosmic Microwave Background Delensing</span><span class="paper-authors">Alessio Spurio Mancini</span> <span class="paper-links"></span></li>
+     <li><span class="paper-title">Sumudu Neural Operator for ODEs and PDEs</span><span class="paper-authors">Benjamin Zelenskiy, Saibilila Abudukelimu, George Flint, Kevin Zhu, Sunishchal Dev</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=kZ2CTw2KKI" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=kZ2CTw2KKI&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">WARP-LUTs - Walsh-Assisted Relaxation for Probabilistic Look Up Tables</span><span class="paper-authors">Lino Gerlach, Liv Helen Våge, Thore Gerlach, Elliott Kauffman, Isobel Ojalvo</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=g6PpiltKxG" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=g6PpiltKxG&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">SQUID: A Bayesian Approach for Physics-Informed Event Modeling</span><span class="paper-authors">Sumantrak Mukherjee, Sebastian Josef Vollmer, Gerrit Großmann</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=iDS1iabzWP" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=iDS1iabzWP&name=pdf" target="_blank">PDF</a>]</span></li>
+     <li><span class="paper-title">Approximating Hermitian Yang--Mills connections on vector bundles</span><span class="paper-authors">Justin Tan</span> <span class="paper-links"></span></li>
+     <li><span class="paper-title">Douglas-Rachford Splitting for Hybrid Differentiable Models</span><span class="paper-authors">Abdel-Rahim Mezidi, Jordan Patracone, Amaury Habrard</span> <span class="paper-links">[<a href="https://openreview.net/forum?id=98TUbfhYqy" target="_blank">OpenReview</a>] [<a href="https://openreview.net/attachment?id=98TUbfhYqy&name=pdf" target="_blank">PDF</a>]</span></li>
+
+      <!-- End auto-generated list of papers -->
+    </ol>
   </section>
 
   <section id="speakers">
@@ -197,24 +334,24 @@
       <div class="person">
         <img class="headshot" src="headshots/petros.png" alt="Petros Koumoutsakos">
         <p><strong><a href="https://cse-lab.seas.harvard.edu/" target="_blank">Petros Koumoutsakos</a></strong></p>
-        <p>Professor of Computing in Science and Engineering, Harvard University, and leading expert in AI for science.</p>
+        <p class="bio">Professor of Computing in Science and Engineering, Harvard University, and a leading expert in AI for science.</p>
       </div>
       <div class="person">
-        <img class="headshot" src="headshots/patrick.png" alt="Patrick Kidger">
-        <p><strong><a href="https://kidger.site" target="_blank">Patrick Kidger</a></strong></p>
-        <p>Core maintainer of the JAX <a href="https://github.com/patrick-kidger" target="_blank">scientific software ecosystem</a> and technical lead at Cradle Bio.</p>
+        <img class="headshot" src="headshots/johanna.jpg" alt="Johanna Haffner">
+        <p><strong><a href="https://haffner.dev/" target="_blank">Johanna Haffner</a></strong></p>
+        <p class="bio">Johanna is a maintainer of Optimistix and an active contributor to scientific computing libraries in the Equinox ecosystem in JAX.  She is currently a PhD researcher in systems biology at ETH Zurich.</p>
       </div>
     </div>
     <div class="people">
       <div class="person">
-        <img class="headshot" src="headshots/nils.jpg" alt="Nils Thuerey">
-        <p><strong><a href="https://ge.in.tum.de/about/n-thuerey/" target="_blank">Nils Thuerey</a></strong></p>
-        <p>Professor of Computer Science at the Technical University of Munich, working on physics-based simulation and machine learning, and pioneer in differentiable physics research.</p>
+        <img class="headshot" src="headshots/sai.png" alt="Sai Bangaru">
+        <p><strong><a href="https://people.csail.mit.edu/sbangaru/" target="_blank">Sai Bangaru</a></strong></p>
+        <p class="bio">Research Scientist at NVIDIA working on GPU programming languages for performance-critical differentiable software. A core developer of the <a href="https://shader-slang.org/" target="_blank">Slang shading language</a>.</p>
       </div>
       <div class="person">
         <img class="headshot" src="headshots/astrid.png" alt="Astrid Walle">
         <p><strong><a href="https://www.linkedin.com/in/astridwalle/" target="_blank">Astrid Walle</a></strong></p>
-        <p>Siemens Energy, expert in ML + data science for real-world simulation problems.</p>
+        <p class="bio">Astrid Walle is a mechanical engineer with a PhD in CFD and more than a decade of experience in applied fluid mechanics. She has held several positions in gas turbine R&D and AI development at Siemens Energy, Vattenfall and Rolls Royce. She's driven to bring AI and Data Science into engineering and to use data in product development from the very beginning.</p>
       </div>
   </section>
 
